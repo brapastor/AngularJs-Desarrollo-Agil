@@ -6,22 +6,25 @@
   function config($locationProvider, $routeProvider) {
     // es importante, ya que permite que las URLs no lleven el caracter # al
     // inicio de ellas, como utiliza por defecto Angular.
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({
+      enabled:true,
+      requireBase:false
+    });
 
     $routeProvider
       .when('/', {
-        templateUrl: 'views/post-list.tpl.html',
+        templateUrl: '/view/post-list.tpl.html',
         controller: 'PostListCtrl',
         controllerAs: 'postlist'
       })
       .when('/post/:postId', {
-        templateUrl: 'views/post-detail.tpl.html',
+        templateUrl: '/view/post-detail.tpl.html',
         controller: 'PostDetailCtrl',
         controllerAs: 'postdetail'
       })
 
     .when('/new', {
-      templateUrl: 'views/post-create.tpl.html',
+      templateUrl: '/view/post-create.tpl.html',
       controller: 'PostCreateCtrl',
       controllerAs: 'postcreate'
     });

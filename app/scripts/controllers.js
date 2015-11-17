@@ -22,7 +22,7 @@
           self.user = User.query({
             id: self.user.userId
           });
-        }
+        },
         //Error
         function(error) {
           console.log(error);
@@ -44,7 +44,7 @@
 
   angular
     .module('blog.controllers')
-    .controller('PostListCtrl')
-    .controller('PostDetailCtrl')
-    .controller('PostCreateCtrl');
+    .controller('PostListCtrl',PostListCtrl)
+    .controller('PostDetailCtrl',PostDetailCtrl)
+    .controller('PostCreateCtrl',PostCreateCtrl);
 })();
