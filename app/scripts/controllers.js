@@ -6,10 +6,10 @@
     this.posts = Post.query();
   }
 
-  function PostDetailCtrl($routeParams, Post, Comment) {
+  function PostDetailCtrl($routeParams, Post, Comment,User) {
     this.post = {};
     this.comments = {};
-    this.user = {}
+    this.user = {};
     var self = this; // Para guardar la referencia
 
     Post.query({
